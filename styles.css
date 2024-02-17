@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'ARCADE';
+        src: url('fonts/ARCADE.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-family: ARCADE;
+}
