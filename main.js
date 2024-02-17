@@ -16,25 +16,9 @@ updateMeters();
 function updateMood() {
     let mood = "";
 
-    if (fullness < 40) {
-        mood += "Coco is hungry"
-    }
-    if (happiness < 40) {
-        if (mood !== "") {
-            mood += " and ";
-        }
-        mood += "Coco is lonely";
-    }
-    if (energy < 40) {
-        if (mood !== "") {
-            mood += " and ";
-        }
-        mood += "Coco is tired";
-    }
     if (happiness <= 0 || fullness <= 0) {
         mood = "Coco is crying!";
-    }
-    if (fullness >= 100 || energy === 0) {
+    } else if (fullness >= 100 || energy === 0) {
         energy = 0;
         mood = "Coco needs to sleep.";
         setTimeout(() => {
@@ -45,7 +29,22 @@ function updateMood() {
             updateMood();
         }, 10000);
     } else {
-        mood = "Coco is content";
+        if (fullness < 40) {
+            mood += "Coco is hungry"
+        }
+        if (happiness < 40) {
+            if (mood !== "") {
+                mood += " and ";
+            }
+            mood += "Coco is lonely";
+        }
+        if (energy < 40) {
+            if (mood !== "") {
+                mood += " and ";
+            }
+            mood += "Coco is tired";
+        }
+        mood = mood !== "" ? mood : "Coco is content";
     }
 
     document.getElementById("moodDisplay").textContent = mood;
@@ -101,6 +100,18 @@ function sleep() {
     updateMeters();
     updateMood();
 }
+
+function decreaseEnergy() {
+    if (energy > 0) {
+        energy -= 10;
+    } else {
+        clearInterval(timer);
+    }
+    updateMeters();
+    updateMood();
+}
+
+const timer = setInterval(decreaseEnergy, 10000);
 
 // Make feed, play, and sleep functions run when their respective buttons are clicked
 document.getElementById("feedButton").addEventListener("click", feed);
