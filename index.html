@@ -9,19 +9,36 @@
 <body>
     <h1>Coco Capybara</h1>
 
-    <img src="cococapybaraexample.png" alt="Tamagotchi with Capybara Animal" style="width:500px">
+    <div class="image-container">
+        <img src="cococapybaraexample.png" alt="Tamagotchi with Capybara Animal" style="width:60%">
+        <button id="feedButton">Feed</button>
+        <button id="playButton">Play</button>
+        <button id="sleepButton">Sleep</button>
+    </div>
 
-    <br>
+    <p class="mood">Mood: <span id="moodDisplay">-</span></p>
 
-    <button id="feedButton">Feed</button>
-    <button id="playButton">Play</button>
-    <button id="sleepButton">Sleep</button>
+    <p class="meter-text">Fullness:</p>
+    <div class="meter">
+        <div id="fullness-meter" class="meter-bar"></div>
+    </div>
+    <p class="meter-text">Happiness:</p>
+    <div class="meter">
+        <div id="happiness-meter" class="meter-bar"></div>
+    </div>
+    <p class="meter-text">Energy:</p>
+    <div class="meter">
+        <div id="energy-meter" class="meter-bar"></div>
+    </div>
 
-    <p>Fullness: <span id="fullnessMeter">0</span></p>
-    <p>Happiness: <span id="happinessMeter">0</span></p>
-    <p>Energy: <span id="energyMeter">0</span></p>
-
-    <p>Mood: <span id="moodDisplay">-</span></p>
+    <h3>Instructions</h3>
+    <p class="instruction-text">Coco is delighted you are looking after her! Please note her special care instructions:</p>
+    <p class="numbered-instruction">1. Coco loves to eat! Give her a little snack by clicking the <span class="instruction-button">feed</span> button.</p>
+    <p class="instruction-text">Be careful though, the more she eats the more it tuckers her out - if she gets too full she'll enter a food coma!</p>
+    <p class="numbered-instruction">2. Coco loves company! Play with her by clicking the <span class="instruction-button">play</span> button.</p>
+    <p class="instruction-text">All of this playing sure does work up her appetite, make sure you feed her to keep her going!</p>
+    <p class="numbered-instruction">3. Coco needs her rest! Get her to have a nap by clicking the <span class="instruction-button">sleep</span> button.</p>
+    <p class="instruction-text">Sleeping by herself too much makes her feel a bit lonely, so do play with her to keep her spirits up!</p>
 
     <script src="main.js"></script>
 </body>

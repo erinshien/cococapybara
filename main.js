@@ -5,9 +5,17 @@ let energy = 50;
 
 // Update meter values on the web page
 function updateMeters() {
-    document.getElementById("fullnessMeter").textContent = fullness;
-    document.getElementById("happinessMeter").textContent = happiness;
-    document.getElementById("energyMeter").textContent = energy;
+    // document.getElementById("fullnessMeter").textContent = fullness;
+    // document.getElementById("happinessMeter").textContent = happiness;
+    // document.getElementById("energyMeter").textContent = energy;
+    
+    const fullnessMeter = document.getElementById('fullness-meter');
+    const happinessMeter = document.getElementById('happiness-meter');
+    const energyMeter = document.getElementById('energy-meter');
+
+    fullnessMeter.style.width = fullness + '%';
+    happinessMeter.style.width = happiness + '%';
+    energyMeter.style.width = energy + '%';
 }
 
 updateMeters();
@@ -20,7 +28,7 @@ function updateMood() {
         mood = "Coco is crying!";
     } else if (fullness >= 100 || energy === 0) {
         energy = 0;
-        mood = "Coco needs to sleep.";
+        mood = "Coco needs to sleep, please leave her to nap for 10 seconds.";
         setTimeout(() => {
             energy = 50;
             fullness = 50;
@@ -30,21 +38,21 @@ function updateMood() {
         }, 10000);
     } else {
         if (fullness < 40) {
-            mood += "Coco is hungry"
+            mood += "hungry"
         }
         if (happiness < 40) {
             if (mood !== "") {
                 mood += " and ";
             }
-            mood += "Coco is lonely";
+            mood += "lonely";
         }
         if (energy < 40) {
             if (mood !== "") {
                 mood += " and ";
             }
-            mood += "Coco is tired";
+            mood += "tired";
         }
-        mood = mood !== "" ? mood : "Coco is content";
+        mood = mood !== "" ? "Coco is " + mood : "Coco is content";
     }
 
     document.getElementById("moodDisplay").textContent = mood;
@@ -101,6 +109,7 @@ function sleep() {
     updateMood();
 }
 
+// Function to decrease Coco's energy at timed intervals
 function decreaseEnergy() {
     if (energy > 0) {
         energy -= 10;

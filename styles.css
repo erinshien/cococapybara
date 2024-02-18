@@ -1,11 +1,65 @@
 @font-face {
-    font-family: 'ARCADE';
-        src: url('fonts/ARCADE.ttf');
+    font-family: 'DP Comic';
+        src: url('fonts/dpcomic.ttf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 html {
-    font-family: ARCADE;
+    font-family: DP Comic;
+    background-color: #faf6f6;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: #54494B;
+    text-align: center;
+}
+
+button {
+    font-family: DP Comic;
+    background: 0;
+    border: 0;
+    color: #312c2c;
+}
+
+.mood {
+    color: #54494B;
+}
+
+.meter {
+    width: 200px;
+    height: 10px;
+    background-color: #ded5d0;
+    border: 0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.meter-bar {
+    height: 100%;
+    background-color: #fd7fa9;
+    transition: width 0.5s ease-in-out;
+}
+
+.meter-text {
+    color: #54494B;
+}
+
+h3 {
+    color: #54494B;
+}
+
+.instruction-text {
+    color: #54494B;
+}
+
+.numbered-instruction {
+    color: #54494B;
+}
+
+.numbered-instruction .instruction-button {
+    color: #ac99bf;
 }
