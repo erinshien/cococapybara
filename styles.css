@@ -15,14 +15,76 @@ html {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
+    justify-items: center;
 }
 
 .image-container {
     grid-column-start: 1;
+    position: relative;
+}
+
+img {
+    width: 570px;
+}
+
+.button {
+    position: absolute;
+}
+
+.button1 {
+    top: 405px;
+    left: 172px;
+}
+
+.button2 {
+    top: 423px;
+    left: 258px;
+}
+
+.button3 {
+    top: 405px;
+    left: 339px;
+}
+
+#feedButton {
+    font-family: DP Comic;
+    font-size: 20px;
+    background: 0;
+    border: 0;
+    color: #312c2c;
+}
+
+#feedButton:hover {
+    color: #a774db;
+}
+
+#playButton {
+    font-family: DP Comic;
+    font-size: 20px;
+    background: 0;
+    border: 0;
+    color: #312c2c;
+}
+
+#playButton:hover {
+    color: #a774db;
+}
+
+#sleepButton {
+    font-family: DP Comic;
+    font-size: 20px;
+    background: 0;
+    border: 0;
+    color: #312c2c;
+}
+
+#sleepButton:hover {
+    color: #a774db;
 }
 
 .text-container {
     grid-column-start: 2;
+    padding-right: 30px;
 }
 
 h1 {
@@ -30,19 +92,12 @@ h1 {
     text-align: center;
 }
 
-button {
-    font-family: DP Comic;
-    background: 0;
-    border: 0;
-    color: #312c2c;
-}
-
 .mood {
     color: #54494B;
 }
 
 .meter {
-    width: 90%;
+    width: 97%;
     height: 10px;
     background-color: #ded5d0;
     border: 0;
@@ -73,5 +128,5 @@ h3 {
 }
 
 .numbered-instruction .instruction-button {
-    color: #ac99bf;
+    color: #a774db;
 }
