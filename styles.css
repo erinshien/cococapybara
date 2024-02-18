@@ -9,8 +9,20 @@
 html {
     font-family: DP Comic;
     background-color: #faf6f6;
-    display: flex;
-    justify-content: center;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
+.image-container {
+    grid-column-start: 1;
+}
+
+.text-container {
+    grid-column-start: 2;
 }
 
 h1 {
@@ -30,7 +42,7 @@ button {
 }
 
 .meter {
-    width: 200px;
+    width: 90%;
     height: 10px;
     background-color: #ded5d0;
     border: 0;
